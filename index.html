@@ -11,20 +11,19 @@
         content="Colectivo Insight: información operativa verificada para hacer más visible y segura la movilidad en colectivos."
     >
 
-    <!-- Leaflet: mapa y geodata -->
     <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
     <header class="header">
         <div class="container nav">
+
             <div class="brand">
                 <span class="brand-mark">CI</span>
                 <span>Colectivo Insight</span>
@@ -45,14 +44,16 @@
                     Registrarme
                 </button>
             </div>
+
         </div>
     </header>
 
 
-    <!-- HERO -->
     <main>
 
+        <!-- HERO -->
         <section class="hero">
+
             <div class="container hero-grid">
 
                 <div class="hero-copy">
@@ -72,6 +73,7 @@
                     </p>
 
                     <div class="hero-buttons">
+
                         <a href="#reportar" class="btn btn-dark">
                             Reportar una excepción
                         </a>
@@ -79,10 +81,12 @@
                         <a href="#ruta" class="btn btn-light">
                             Ver ruta piloto
                         </a>
+
                     </div>
 
                     <div class="hero-note">
                         <strong>IA SIMULADA</strong>
+
                         <span>
                             Las clasificaciones automáticas no son verdad:
                             requieren revisión humana.
@@ -92,11 +96,13 @@
                 </div>
 
 
-                <!-- ROUTE PREVIEW -->
+                <!-- MAP -->
                 <div class="route-card">
 
                     <div class="route-card-top">
+
                         <div>
+
                             <span class="mini-label">
                                 RUTA PILOTO
                             </span>
@@ -108,16 +114,19 @@
                             <p>
                                 Metro Indios Verdes → Metro Universidad
                             </p>
+
                         </div>
 
                         <span class="live-pill">
                             PILOTO
                         </span>
+
                     </div>
 
                     <div id="map" class="map-container"></div>
 
                     <div class="route-stats">
+
                         <div>
                             <span>Estado</span>
                             <strong>Operativa</strong>
@@ -132,11 +141,13 @@
                             <span>Conductores piloto</span>
                             <strong>7</strong>
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
+
         </section>
 
 
@@ -146,6 +157,7 @@
             <div class="container">
 
                 <div class="section-heading">
+
                     <span class="eyebrow">
                         COLLECT → CHECK → UPDATE → USE
                     </span>
@@ -158,45 +170,65 @@
                         El piloto busca capturar excepciones que los conductores
                         ya conocen y convertirlas en información útil y verificable.
                     </p>
+
                 </div>
 
 
                 <div class="feature-grid">
 
                     <article class="feature-card">
+
                         <span class="feature-number">01</span>
+
                         <h3>Collect</h3>
+
                         <p>
                             El conductor reporta una calle cerrada,
                             zona peligrosa, retraso o cambio de ruta.
                         </p>
+
                     </article>
 
+
                     <article class="feature-card">
+
                         <span class="feature-number">02</span>
+
                         <h3>Check</h3>
+
                         <p>
                             El reporte pasa por revisión humana.
                             La IA simulada solamente ayuda a clasificarlo.
                         </p>
+
                     </article>
 
+
                     <article class="feature-card">
+
                         <span class="feature-number">03</span>
+
                         <h3>Update</h3>
+
                         <p>
                             La información se corrige, verifica o expira
                             para evitar que una alerta vieja siga circulando.
                         </p>
+
                     </article>
 
+
                     <article class="feature-card">
+
                         <span class="feature-number">04</span>
+
                         <h3>Use</h3>
+
                         <p>
                             Conductores y pasajeros utilizan la información
                             verificada para operar mejor la ruta.
                         </p>
+
                     </article>
 
                 </div>
@@ -249,25 +281,11 @@
 
                         <select id="reportType">
 
-                            <option>
-                                Calle cerrada
-                            </option>
-
-                            <option>
-                                Zona peligrosa
-                            </option>
-
-                            <option>
-                                Parada inaccesible
-                            </option>
-
-                            <option>
-                                Cambio de ruta
-                            </option>
-
-                            <option>
-                                Retraso inusual
-                            </option>
+                            <option>Calle cerrada</option>
+                            <option>Zona peligrosa</option>
+                            <option>Parada inaccesible</option>
+                            <option>Cambio de ruta</option>
+                            <option>Retraso inusual</option>
 
                         </select>
 
@@ -301,17 +319,9 @@
 
                         <select id="expiration">
 
-                            <option>
-                                Hoy
-                            </option>
-
-                            <option>
-                                En 6 horas
-                            </option>
-
-                            <option>
-                                En 24 horas
-                            </option>
+                            <option>Hoy</option>
+                            <option>En 6 horas</option>
+                            <option>En 24 horas</option>
 
                         </select>
 
@@ -356,7 +366,7 @@
         </section>
 
 
-        <!-- CHECK / UPDATE -->
+        <!-- VERIFICATION -->
         <section class="section">
 
             <div class="container">
@@ -427,16 +437,17 @@
                 <div class="section-heading">
 
                     <span class="eyebrow">
-                        PHONE / VEHICLE TELEMETRY
+                        DATOS DE DEMOSTRACIÓN
                     </span>
 
                     <h2>
-                        Telemetría simulada para el piloto.
+                        Telemetría simulada — no es seguimiento del conductor.
                     </h2>
 
                     <p>
-                        Estos datos son únicamente demostrativos y no representan
-                        seguimiento permanente de conductores.
+                        Los datos de velocidad y posición que aparecen aquí son
+                        completamente simulados. No representan la ubicación real
+                        de ningún conductor y no se utilizan para vigilancia.
                     </p>
 
                 </div>
@@ -445,21 +456,21 @@
                 <div class="telemetry-card">
 
                     <div class="telemetry-item">
-                        <span>Velocidad</span>
+                        <span>Velocidad simulada</span>
                         <strong id="speedValue">
                             18 km/h
                         </strong>
                     </div>
 
                     <div class="telemetry-item">
-                        <span>Estado</span>
+                        <span>Estado simulado</span>
                         <strong id="telemetryStatus">
                             En ruta
                         </strong>
                     </div>
 
                     <div class="telemetry-item">
-                        <span>Posición</span>
+                        <span>Posición simulada</span>
                         <strong id="positionValue">
                             Punto piloto 01
                         </strong>
@@ -515,25 +526,53 @@
                 <div class="route-points">
 
                     <div class="route-point">
+
                         <span>01</span>
-                        <strong>Metro Indios Verdes</strong>
-                        <p>Inicio de la ruta.</p>
+
+                        <strong>
+                            Metro Indios Verdes
+                        </strong>
+
+                        <p>
+                            Inicio de la ruta.
+                        </p>
+
                     </div>
+
 
                     <div class="route-line"></div>
 
+
                     <div class="route-point">
+
                         <span>02</span>
-                        <strong>Av. Insurgentes</strong>
-                        <p>Zona de observación.</p>
+
+                        <strong>
+                            Av. Insurgentes
+                        </strong>
+
+                        <p>
+                            Zona de observación.
+                        </p>
+
                     </div>
+
 
                     <div class="route-line"></div>
 
+
                     <div class="route-point">
+
                         <span>03</span>
-                        <strong>Metro Universidad</strong>
-                        <p>Fin de la ruta.</p>
+
+                        <strong>
+                            Metro Universidad
+                        </strong>
+
+                        <p>
+                            Fin de la ruta.
+                        </p>
+
                     </div>
 
                 </div>
@@ -559,6 +598,7 @@
                     </h2>
 
                 </div>
+
 
                 <div class="security-list">
 
@@ -595,22 +635,28 @@
     </main>
 
 
-    <!-- FOOTER -->
     <footer class="footer">
 
         <div class="container footer-inner">
 
             <div>
-                <strong>Colectivo Insight</strong>
+
+                <strong>
+                    Colectivo Insight
+                </strong>
+
                 <p>
                     Hacer visible el conocimiento operativo de la movilidad humana.
                 </p>
+
             </div>
 
             <div>
+
                 <span>
                     Week 7 · The Holy Driver
                 </span>
+
             </div>
 
         </div>
@@ -618,7 +664,6 @@
     </footer>
 
 
-    <!-- Leaflet -->
     <script
         src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
     </script>
