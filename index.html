@@ -68,12 +68,9 @@
 
 
 
-<!-- ============================= -->
 <!-- HERO -->
-<!-- ============================= -->
 
 <section class="hero">
-
 
     <div>
 
@@ -119,9 +116,7 @@
                     .scrollIntoView()
                 "
             >
-
                 Reportar una situación
-
             </button>
 
 
@@ -133,9 +128,7 @@
                     .scrollIntoView()
                 "
             >
-
                 Ver cómo funciona
-
             </button>
 
         </div>
@@ -144,17 +137,13 @@
 
 
 
-    <!-- ROUTE PREVIEW -->
-
     <div class="hero-card">
-
 
         <div class="route-header">
 
             <strong>
                 Ruta 1
             </strong>
-
 
             <span class="status">
                 ● Operando
@@ -163,31 +152,22 @@
         </div>
 
 
-
         <div class="route">
-
 
             <div class="route-line"></div>
 
-
             <div class="point p1"></div>
-
             <div class="point p2"></div>
-
             <div class="point p3"></div>
-
             <div class="point p4"></div>
-
 
             <div class="alert-marker marker1">
                 !
             </div>
 
-
             <div class="alert-marker marker2">
                 !
             </div>
-
 
         </div>
 
@@ -210,22 +190,18 @@
 
         </div>
 
-
     </div>
 
 </section>
 
 
 
-<!-- ============================= -->
 <!-- HOW IT WORKS -->
-<!-- ============================= -->
 
 <section
     class="section"
     id="como-funciona"
 >
-
 
     <div class="section-title">
 
@@ -233,16 +209,12 @@
             Información que se mantiene viva
         </h2>
 
-
         <p>
-
             El sistema sigue un proceso simple:
             recopilar, verificar, actualizar y utilizar.
-
         </p>
 
     </div>
-
 
 
     <div class="features">
@@ -254,11 +226,9 @@
                 📍
             </div>
 
-
             <h3>
                 1. Collect
             </h3>
-
 
             <p>
 
@@ -279,11 +249,9 @@
                 ✓
             </div>
 
-
             <h3>
                 2. Check
             </h3>
-
 
             <p>
 
@@ -304,11 +272,9 @@
                 🔄
             </div>
 
-
             <h3>
                 3. Update
             </h3>
-
 
             <p>
 
@@ -323,14 +289,11 @@
 
     </div>
 
-
 </section>
 
 
 
-<!-- ============================= -->
 <!-- REPORT -->
-<!-- ============================= -->
 
 <section
     class="report-section"
@@ -343,12 +306,9 @@
 
         <div class="report-text">
 
-
             <h2>
-
                 Tu conocimiento también
                 te debe beneficiar.
-
             </h2>
 
 
@@ -360,7 +320,6 @@
                 útil para la ruta.
 
             </p>
-
 
 
             <ul class="report-rules">
@@ -387,15 +346,11 @@
 
             </ul>
 
-
         </div>
 
 
 
-        <!-- REPORT FORM -->
-
         <div class="report-box">
-
 
             <h3>
                 Nuevo reporte
@@ -432,7 +387,6 @@
             </select>
 
 
-
             <label>
                 Ubicación
             </label>
@@ -446,7 +400,6 @@
             >
 
 
-
             <label>
                 ¿Qué está pasando?
             </label>
@@ -457,7 +410,6 @@
                 maxlength="300"
                 placeholder="Describe brevemente la situación..."
             ></textarea>
-
 
 
             <label>
@@ -482,15 +434,11 @@
             </select>
 
 
-
             <button
                 onclick="submitReport()"
             >
-
                 Enviar reporte
-
             </button>
-
 
 
             <div class="ai-note">
@@ -499,27 +447,24 @@
 
                 <br>
 
-                El prototipo puede ayudar a clasificar
-                el reporte, pero no decide si un evento
-                es verdadero. La revisión humana permanece
+                La IA puede ayudar a clasificar
+                el reporte, pero no decide si el
+                evento es verdadero.
+
+                La revisión humana permanece
                 en el proceso.
 
             </div>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
 
 
-<!-- ============================= -->
-<!-- VERIFICATION FLOW -->
-<!-- ============================= -->
+<!-- VERIFICATION -->
 
 <section
     class="section"
@@ -529,11 +474,9 @@
 
     <div class="section-title">
 
-
         <h2>
             Del reporte a la información útil
         </h2>
-
 
         <p>
 
@@ -542,7 +485,6 @@
             verdad automáticamente.
 
         </p>
-
 
     </div>
 
@@ -557,11 +499,9 @@
                 📥
             </div>
 
-
             <h3>
                 Reportado
             </h3>
-
 
             <p>
 
@@ -570,16 +510,8 @@
 
             </p>
 
-
-            <div style="
-                margin-top:15px;
-                color:#d58b00;
-                font-weight:bold;
-                font-size:12px;
-            ">
-
+            <div class="state reported">
                 ESTADO 01
-
             </div>
 
         </div>
@@ -592,11 +524,9 @@
                 🔎
             </div>
 
-
             <h3>
                 En revisión
             </h3>
-
 
             <p>
 
@@ -605,16 +535,8 @@
 
             </p>
 
-
-            <div style="
-                margin-top:15px;
-                color:#176fe8;
-                font-weight:bold;
-                font-size:12px;
-            ">
-
+            <div class="state reviewing">
                 ESTADO 02
-
             </div>
 
         </div>
@@ -627,11 +549,9 @@
                 ✓
             </div>
 
-
             <h3>
                 Verificado
             </h3>
-
 
             <p>
 
@@ -640,16 +560,8 @@
 
             </p>
 
-
-            <div style="
-                margin-top:15px;
-                color:#12995a;
-                font-weight:bold;
-                font-size:12px;
-            ">
-
+            <div class="state verified">
                 ESTADO 03
-
             </div>
 
         </div>
@@ -662,11 +574,9 @@
                 ⏳
             </div>
 
-
             <h3>
                 Expirado
             </h3>
-
 
             <p>
 
@@ -676,26 +586,17 @@
 
             </p>
 
-
-            <div style="
-                margin-top:15px;
-                color:#777f8e;
-                font-weight:bold;
-                font-size:12px;
-            ">
-
+            <div class="state expired">
                 ESTADO 04
-
             </div>
 
         </div>
-
 
     </div>
 
 
 
-    <!-- CURRENT DEMO REPORT -->
+    <!-- SAVED REPORT -->
 
     <div
         id="reportStatus"
@@ -710,32 +611,66 @@
         "
     >
 
-        <h3>
-            Tu último reporte
-        </h3>
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:20px;
+        ">
+
+            <div>
+
+                <h3>
+                    Tu último reporte
+                </h3>
+
+                <p style="
+                    margin-top:5px;
+                    color:#12995a;
+                    font-size:12px;
+                    font-weight:bold;
+                ">
+                    ✓ REPORTE GUARDADO EN ESTE DISPOSITIVO
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="clearReport()"
+                style="
+                    background:white;
+                    border:1px solid #d5dce5;
+                    color:#596474;
+                    padding:8px 12px;
+                    border-radius:7px;
+                    cursor:pointer;
+                    font-size:11px;
+                "
+            >
+                Limpiar demo
+            </button>
+
+        </div>
 
 
         <p
             id="statusContent"
             style="
-                margin-top:12px;
+                margin-top:18px;
                 color:#697382;
                 line-height:1.6;
                 font-size:14px;
             "
         ></p>
 
-
     </div>
-
 
 </section>
 
 
 
-<!-- ============================= -->
-<!-- SAFETY -->
-<!-- ============================= -->
+<!-- SECURITY -->
 
 <section
     class="section"
@@ -745,22 +680,21 @@
 
     <div class="section-title">
 
-
         <h2>
             Diseñada con límites claros
         </h2>
 
-
         <p>
 
             El objetivo no es capturar todo el
-            conocimiento del conductor. Es probar
-            si una categoría específica de información
-            realmente falta, importa y puede mantenerse
+            conocimiento del conductor.
+
+            Es probar si una categoría específica
+            de información realmente falta,
+            importa y puede mantenerse
             responsablemente.
 
         </p>
-
 
     </div>
 
@@ -775,11 +709,9 @@
                 🛡️
             </div>
 
-
             <h3>
                 Sin vigilancia
             </h3>
-
 
             <p>
 
@@ -799,11 +731,9 @@
                 ⏳
             </div>
 
-
             <h3>
                 Información temporal
             </h3>
-
 
             <p>
 
@@ -823,11 +753,9 @@
                 👤
             </div>
 
-
             <h3>
                 Humano en el proceso
             </h3>
-
 
             <p>
 
@@ -842,14 +770,9 @@
 
     </div>
 
-
 </section>
 
 
-
-<!-- ============================= -->
-<!-- FOOTER -->
-<!-- ============================= -->
 
 <footer>
 
@@ -859,8 +782,6 @@
 </footer>
 
 
-
-<!-- JAVASCRIPT -->
 
 <script src="script.js"></script>
 
