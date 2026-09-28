@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colectivo Insight</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        header {
+            height: 72px;
+            background: white;
+            border-bottom: 1px solid #e2e7ee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 35px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .logo-icon {
+            background: #176fe8;
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+        }
+
+        .logo span {
+            color: #176fe8;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3d4654;
+            font-size: 14px;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-buttons button {
+            padding: 10px 17px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .login {
+            background: white;
+            border: 1px solid #d5dce5;
+        }
+
+        .register {
+            background: #176fe8;
+            color: white;
+            border: none;
+        }
+
+        .hero {
+            padding: 55px 8%;
+            background: linear-gradient(135deg, #eef6ff, #ffffff);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #176fe8;
+        }
+
+        .hero p {
+            color: #626c7b;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 570px;
+        }
+
+        .hero-buttons {
+            margin-top: 28px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .primary {
+            background: #176fe8;
+            color: white;
+            border: none;
+            padding: 14px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .secondary {
+            background: white;
+            border: 1px solid #ccd5e1;
+            padding: 14px 22px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 12px 35px rgba(26, 55, 90, .12);
+        }
+
+        .route-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .route-header strong {
+            font-size: 18px;
+        }
+
+        .status {
+            color: #12995a;
+            background: #eaf8f0;
+            padding: 7px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .route {
+            height: 260px;
+            background:
+                linear-gradient(135deg, transparent 48%, #dbe4ef 49%, #dbe4ef 51%, transparent 52%),
+                #edf2f7;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .route-line {
+            position: absolute;
+            width: 75%;
+            height: 7px;
+            background: #176fe8;
+            top: 52%;
+            left: 12%;
+            transform: rotate(-14deg);
+            border-radius: 10px;
+        }
+
+        .point {
+            position: absolute;
+            width: 19px;
+            height: 19px;
+            background: white;
+            border: 5px solid #176fe8;
+            border-radius: 50%;
+        }
+
+        .p1 {
+            left: 11%;
+            top: 63%;
+        }
+
+        .p2 {
+            left: 38%;
+            top: 57%;
+        }
+
+        .p3 {
+            left: 64%;
+            top: 48%;
+        }
+
+        .p4 {
+            right: 10%;
+            top: 35%;
+        }
+
+        .alert-marker {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            background: #fff2d4;
+            color: #d58b00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .marker1 {
+            left: 52%;
+            top: 43%;
+        }
+
+        .marker2 {
+            left: 76%;
+            top: 29%;
+            background: #ffe3e3;
+            color: #d93636;
+        }
+
+        .section {
+            padding: 55px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 31px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #697382;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .feature {
+            background: white;
+            padding: 28px;
+            border-radius: 13px;
+            border: 1px solid #e2e7ee;
+        }
+
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 17px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature p {
+            color: #697382;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .report-section {
+            background: #172033;
+            color: white;
+            padding: 60px 8%;
+        }
+
+        .report-container {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .report-text h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .report-text p {
+            color: #bdc7d5;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .report-rules {
+            list-style: none;
+        }
+
+        .report-rules li {
+            margin: 12px 0;
+            color: #dce3ec;
+        }
+
+        .report-box {
+            background: white;
+            color: #172033;
+            padding: 25px;
+            border-radius: 13px;
+        }
+
+        .report-box h3 {
+            margin-bottom: 18px;
+        }
+
+        .report-box label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 13px 0 6px;
+        }
+
+        .report-box input,
+        .report-box textarea,
+        .report-box select {
+            width: 100%;
+            border: 1px solid #d5dce5;
+            border-radius: 7px;
+            padding: 11px;
+            font-size: 13px;
+        }
+
+        .report-box textarea {
+            height: 90px;
+            resize: none;
+        }
+
+        .report-box button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 13px;
+            background: #176fe8;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .ai-note {
+            margin-top: 12px;
+            background: #eef6ff;
+            color: #46627f;
+            padding: 11px;
+            border-radius: 7px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        footer {
+            background: #101722;
+            color: #9ba6b6;
+            padding: 25px 8%;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .header-buttons {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .report-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <div class="logo-icon">🚌</div>
+        Colectivo <span>Insight</span>
+    </div>
+
+    <nav>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#reportar">Reportar</a>
+        <a href="#seguridad">Seguridad</a>
+    </nav>
+
+    <div class="header-buttons">
+        <button class="login">Iniciar sesión</button>
+        <button class="register">Registrarse</button>
+    </div>
+
+</header>
+
+
+<section class="hero">
+
+    <div>
+
+        <p style="color:#176fe8;font-weight:bold;font-size:12px;">
+            RUTA PILOTO · CIUDAD DE MÉXICO
+        </p>
+
+        <h1>
+            El conocimiento del conductor
+            <span>hace visible la ruta.</span>
+        </h1>
+
+        <p>
+            Colectivo Insight convierte cambios y excepciones de las rutas
+            informales en información verificable para conductores y pasajeros,
+            sin convertir al trabajador en el producto.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary"
+                    onclick="document.getElementById('reportar').scrollIntoView()">
+                Reportar una situación
+            </button>
+
+            <button class="secondary"
+                    onclick="document.getElementById('como-funciona').scrollIntoView()">
+                Ver cómo funciona
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="route-header">
+
+            <strong>Ruta 1</strong>
+
+            <span class="status">
+                ● Operando
+            </span>
+
+        </div>
+
+        <div class="route">
+
+            <div class="route-line"></div>
+
+            <div class="point p1"></div>
+            <div class="point p2"></div>
+            <div class="point p3"></div>
+            <div class="point p4"></div>
+
+            <div class="alert-marker marker1">!</div>
+            <div class="alert-marker marker2">!</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="como-funciona">
+
+    <div class="section-title">
+
+        <h2>Información que se mantiene viva</h2>
+
+        <p>
+            No buscamos construir otro servicio de transporte.
+            Buscamos hacer visible la información que cambia en la operación diaria.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">📍</div>
+
+            <h3>Collect</h3>
+
+            <p>
+                Los conductores pueden reportar cambios, cierres,
+                zonas peligrosas, retrasos y excepciones de la ruta.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">✓</div>
+
+            <h3>Check</h3>
+
+            <p>
+                Un reporte no se convierte automáticamente en verdad.
+                La información necesita revisión antes de marcarse como verificada.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🔄</div>
+
+            <h3>Update & Use</h3>
+
+            <p>
+                Las alertas tienen una vigencia y pueden corregirse o expirar,
+                para que pasajeros y operadores reciban información útil.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="report-section" id="reportar">
+
+    <div class="report-container">
+
+        <div class="report-text">
+
+            <h2>
+                Tu conocimiento también te debe beneficiar.
+            </h2>
+
+            <p>
+                El sistema está diseñado para devolver valor al conductor:
+                alertas de seguridad, cambios de ruta e información operacional.
+            </p>
+
+            <ul class="report-rules">
+
+                <li>✓ No se crea un perfil permanente del conductor.</li>
+
+                <li>✓ Los reportes requieren verificación.</li>
+
+                <li>✓ La información puede corregirse o expirar.</li>
+
+                <li>✓ La IA del prototipo solo es una herramienta de apoyo.</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="report-box">
+
+            <h3>Nuevo reporte</h3>
+
+            <label>Tipo de situación</label>
+
+            <select id="reportType">
+
+                <option>Calle cerrada</option>
+                <option>Zona peligrosa</option>
+                <option>Parada inaccesible</option>
+                <option>Cambio de ruta</option>
+                <option>Retraso inusual</option>
+
+            </select>
+
+
+            <label>Ubicación</label>
+
+            <input
+                id="location"
+                type="text"
+                placeholder="Ej. Av. Insurgentes"
+            >
+
+
+            <label>¿Qué está pasando?</label>
+
+            <textarea
+                id="description"
+                placeholder="Describe brevemente la situación..."
+            ></textarea>
+
+
+            <label>¿Cuándo debería expirar?</label>
+
+            <select id="expiration">
+
+                <option>Hoy</option>
+                <option>24 horas</option>
+                <option>3 días</option>
+
+            </select>
+
+
+            <button onclick="submitReport()">
+                Enviar reporte
+            </button>
+
+
+            <div class="ai-note">
+
+                🤖 <strong>IA SIMULADA</strong><br>
+
+                El prototipo puede clasificar el tipo de reporte,
+                pero toda información requiere revisión humana antes
+                de considerarse verificada.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="seguridad">
+
+    <div class="section-title">
+
+        <h2>Diseñada con límites claros</h2>
+
+        <p>
+            El objetivo no es capturar todo el conocimiento del conductor.
+            Es probar si una categoría específica de información realmente falta,
+            importa y puede mantenerse responsablemente.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">🛡️</div>
+
+            <h3>Sin vigilancia</h3>
+
+            <p>
+                El MVP no utiliza seguimiento permanente ni evaluación
+                individual de conductores.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">⏳</div>
+
+            <h3>Información temporal</h3>
+
+            <p>
+                Las excepciones tienen fecha de expiración porque una
+                alerta vieja puede ser tan problemática como no tener información.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">👤</div>
+
+            <h3>Humano en el proceso</h3>
+
+            <p>
+                La información reportada permanece sujeta a verificación,
+                corrección y responsabilidad humana.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    Colectivo Insight · Week 7 Business Bending · Prototipo académico
+
+</footer>
+
+
+<script>
+
+function submitReport() {
+
+    const type =
+        document.getElementById("reportType").value;
+
+    const location =
+        document.getElementById("location").value.trim();
+
+    const description =
+        document.getElementById("description").value.trim();
+
+    const expiration =
+        document.getElementById("expiration").value;
+
+
+    if (!location || !description) {
+
+        alert(
+            "Agrega una ubicación y una descripción antes de enviar el reporte."
+        );
+
+        return;
+    }
+
+
+    if (description.length < 10) {
+
+        alert(
+            "La descripción debe tener al menos 10 caracteres."
+        );
+
+        return;
+    }
+
+
+    const report = {
+
+        type: type,
+        location: location,
+        description: description,
+        expiration: expiration,
+        status: "En revisión",
+        ai: "IA simulada — requiere revisión humana",
+        created: new Date().toLocaleString("es-MX")
+
+    };
+
+
+    localStorage.setItem(
+        "colectivoInsightReport",
+        JSON.stringify(report)
+    );
+
+
+    alert(
+        "Reporte recibido. Estado: EN REVISIÓN.\n\n" +
+        "Tipo: " + type +
+        "\nUbicación: " + location +
+        "\nVigencia: " + expiration
+    );
+
+
+    document.getElementById("location").value = "";
+    document.getElementById("description").value = "";
+
+}
+
+</script>
+
+</body>
+</html>
