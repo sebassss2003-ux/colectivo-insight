@@ -1,0 +1,430 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+/* NAVBAR */
+
+header {
+    height: 72px;
+    background: white;
+    border-bottom: 1px solid #e2e7ee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.logo-icon {
+    background: #176fe8;
+    color: white;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.logo span {
+    color: #176fe8;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3d4654;
+    font-size: 14px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.header-buttons button {
+    padding: 10px 17px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.login {
+    background: white;
+    border: 1px solid #d5dce5;
+}
+
+.register {
+    background: #176fe8;
+    color: white;
+    border: none;
+}
+
+
+/* HERO */
+
+.hero {
+    padding: 55px 8%;
+    background: linear-gradient(135deg, #eef6ff, #ffffff);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #176fe8;
+}
+
+.hero p {
+    color: #626c7b;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 570px;
+}
+
+.hero-buttons {
+    margin-top: 28px;
+    display: flex;
+    gap: 12px;
+}
+
+.primary {
+    background: #176fe8;
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.secondary {
+    background: white;
+    border: 1px solid #ccd5e1;
+    padding: 14px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* MAP PREVIEW */
+
+.hero-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 12px 35px rgba(26, 55, 90, .12);
+}
+
+.route-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.route-header strong {
+    font-size: 18px;
+}
+
+.status {
+    color: #12995a;
+    background: #eaf8f0;
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.route {
+    height: 260px;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 48%,
+            #dbe4ef 49%,
+            #dbe4ef 51%,
+            transparent 52%
+        ),
+        #edf2f7;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.route-line {
+    position: absolute;
+    width: 75%;
+    height: 7px;
+    background: #176fe8;
+    top: 52%;
+    left: 12%;
+    transform: rotate(-14deg);
+    border-radius: 10px;
+}
+
+.point {
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    background: white;
+    border: 5px solid #176fe8;
+    border-radius: 50%;
+}
+
+.p1 {
+    left: 11%;
+    top: 63%;
+}
+
+.p2 {
+    left: 38%;
+    top: 57%;
+}
+
+.p3 {
+    left: 64%;
+    top: 48%;
+}
+
+.p4 {
+    right: 10%;
+    top: 35%;
+}
+
+.alert-marker {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: #fff2d4;
+    color: #d58b00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.marker1 {
+    left: 52%;
+    top: 43%;
+}
+
+.marker2 {
+    left: 76%;
+    top: 29%;
+    background: #ffe3e3;
+    color: #d93636;
+}
+
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 55px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #697382;
+    line-height: 1.6;
+}
+
+
+/* FEATURES */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.feature {
+    background: white;
+    padding: 28px;
+    border-radius: 13px;
+    border: 1px solid #e2e7ee;
+}
+
+.feature-icon {
+    font-size: 28px;
+    margin-bottom: 17px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.feature p {
+    color: #697382;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* REPORT SECTION */
+
+.report-section {
+    background: #172033;
+    color: white;
+    padding: 60px 8%;
+}
+
+.report-container {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.report-text h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.report-text p {
+    color: #bdc7d5;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.report-rules {
+    list-style: none;
+}
+
+.report-rules li {
+    margin: 12px 0;
+    color: #dce3ec;
+}
+
+
+/* REPORT FORM */
+
+.report-box {
+    background: white;
+    color: #172033;
+    padding: 25px;
+    border-radius: 13px;
+}
+
+.report-box h3 {
+    margin-bottom: 18px;
+}
+
+.report-box label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 13px 0 6px;
+}
+
+.report-box input,
+.report-box textarea,
+.report-box select {
+    width: 100%;
+    border: 1px solid #d5dce5;
+    border-radius: 7px;
+    padding: 11px;
+    font-size: 13px;
+}
+
+.report-box textarea {
+    height: 90px;
+    resize: none;
+}
+
+.report-box button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 13px;
+    background: #176fe8;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.ai-note {
+    margin-top: 12px;
+    background: #eef6ff;
+    color: #46627f;
+    padding: 11px;
+    border-radius: 7px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #101722;
+    color: #9ba6b6;
+    padding: 25px 8%;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    nav {
+        display: none;
+    }
+
+    .header-buttons {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .report-container {
+        grid-template-columns: 1fr;
+    }
+}
