@@ -1,12 +1,12 @@
-// =====================================
+// ==========================================
 // COLECTIVO INSIGHT
 // WEEK 7 - BUSINESS BENDING
-// =====================================
+// ==========================================
 
 
-// -------------------------------------
-// REPORT SUBMISSION
-// -------------------------------------
+// ==========================================
+// SEND REPORT
+// ==========================================
 
 function submitReport() {
 
@@ -23,7 +23,7 @@ function submitReport() {
         document.getElementById("expiration").value;
 
 
-    // VALIDATION
+    // BASIC VALIDATION
 
     if (!location || !description) {
 
@@ -45,13 +45,13 @@ function submitReport() {
     }
 
 
-    // SIMULATED AI TRIAGE
+    // SIMULATED AI CLASSIFICATION
 
     const aiResult =
         simulatedAI(type, description);
 
 
-    // CREATE REPORT
+    // REPORT OBJECT
 
     const report = {
 
@@ -73,7 +73,7 @@ function submitReport() {
     };
 
 
-    // SAVE DEMO DATA
+    // SAVE DEMO REPORT
 
     localStorage.setItem(
         "colectivoInsightReport",
@@ -81,15 +81,9 @@ function submitReport() {
     );
 
 
-    // USER FEEDBACK
+    // SHOW REPORT ON SCREEN
 
-    alert(
-        "Reporte recibido correctamente.\n\n" +
-        "Estado: EN REVISIÓN\n" +
-        "Tipo: " + type + "\n" +
-        "Ubicación: " + location + "\n" +
-        "Vigencia: " + expiration
-    );
+    showReport(report);
 
 
     // CLEAR FORM
@@ -98,14 +92,94 @@ function submitReport() {
 
     document.getElementById("description").value = "";
 
+
+    // CONFIRMATION
+
+    alert(
+        "Reporte recibido.\n\n" +
+        "Estado: EN REVISIÓN\n" +
+        "La información será revisada antes de mostrarse como verificada."
+    );
+
 }
 
 
-// -------------------------------------
+// ==========================================
+// DISPLAY REPORT
+// ==========================================
+
+function showReport(report) {
+
+    const container =
+        document.getElementById("reportStatus");
+
+    const content =
+        document.getElementById("statusContent");
+
+
+    container.style.display = "block";
+
+
+    content.innerHTML = `
+
+        <strong>
+            ${report.type}
+        </strong>
+
+        <br><br>
+
+        📍 ${report.location}
+
+        <br><br>
+
+        ${report.description}
+
+        <br><br>
+
+        <strong>
+            Estado:
+        </strong>
+
+        <span style="
+            color:#176fe8;
+            font-weight:bold;
+        ">
+            EN REVISIÓN
+        </span>
+
+        <br><br>
+
+        🤖 <strong>IA SIMULADA</strong>
+
+        <br>
+
+        Clasificación:
+        ${report.ai.confidence}
+
+        <br>
+
+        Recomendación:
+        ${report.ai.recommendation}
+
+        <br><br>
+
+        ⏳ Vigencia:
+        ${report.expiration}
+
+        <br><br>
+
+        <small>
+            Creado:
+            ${report.createdAt}
+        </small>
+
+    `;
+}
+
+
+// ==========================================
 // SIMULATED AI
-// -------------------------------------
-// This is intentionally a simulated output.
-// It does NOT make autonomous safety decisions.
+// ==========================================
 
 function simulatedAI(type, description) {
 
@@ -130,7 +204,8 @@ function simulatedAI(type, description) {
 
     const relevant =
         keywords.some(
-            keyword => text.includes(keyword)
+            keyword =>
+                text.includes(keyword)
         );
 
 
@@ -151,27 +226,77 @@ function simulatedAI(type, description) {
 }
 
 
-// -------------------------------------
-// NAVIGATION BUTTONS
-// -------------------------------------
+// ==========================================
+// LOAD LAST REPORT
+// ==========================================
+
+function loadSavedReport() {
+
+    const saved =
+        localStorage.getItem(
+            "colectivoInsightReport"
+        );
+
+
+    if (!saved) {
+        return;
+    }
+
+
+    try {
+
+        const report =
+            JSON.parse(saved);
+
+        showReport(report);
+
+    }
+
+    catch (error) {
+
+        console.log(
+            "No se pudo cargar el reporte guardado."
+        );
+
+    }
+
+}
+
+
+// ==========================================
+// HEADER DEMO BUTTONS
+// ==========================================
 
 document
     .querySelector(".login")
-    .addEventListener("click", function () {
+    .addEventListener(
+        "click",
+        function () {
 
-        alert(
-            "Demo: el inicio de sesión estará disponible en una siguiente versión."
-        );
+            alert(
+                "Demo: el inicio de sesión estará disponible en una siguiente versión."
+            );
 
-    });
+        }
+    );
 
 
 document
     .querySelector(".register")
-    .addEventListener("click", function () {
+    .addEventListener(
+        "click",
+        function () {
 
-        alert(
-            "Demo: el registro estará disponible en una siguiente versión."
-        );
+            alert(
+                "Demo: el registro estará disponible en una siguiente versión."
+            );
 
-    });
+        }
+    );
+
+
+// ==========================================
+// START
+// ==========================================
+
+loadSavedReport();
